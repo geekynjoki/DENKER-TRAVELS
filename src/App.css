@@ -13,7 +13,6 @@
     --PrimaryColor: hsl(199, 100%, 33%);
     --SecondaryColor: hsl(185, 85%, 43%);
     --gradientColor: linear-gradient(to right, hsl(185, 85%, 43%), hsl(199, 100%, 33%));
-
     --whiteColor: hsl(0, 0%, 100%);
    --blackColor: hsl(201, 33%, 16%);
    --textColor: hsl(240, 4%, 36%);
@@ -57,10 +56,14 @@ li{
 }
 
 .btn{
-    padding: 6rem 1.5rem;
-    background: var(--gradientColor);
-    border-radius: 3rem;
+    padding: .7rem 1rem;
+    background: #833ab4;
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    color: #fff;
+    border-radius: 4rem;
     border: none;
+    font-size: small;
     outline: none;
     cursor: pointer;
 }
