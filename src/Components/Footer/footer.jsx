@@ -1,9 +1,25 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './footer.scss'
 import video from '../../Denkerreact/video2.mp4'
 import {FiSend} from 'react-icons/fi'
+import {MdTravelExplore} from 'react-icons/md'
+import {AiOutlineTwitter} from 'react-icons/ai'
+import {AiFillInstagram} from 'react-icons/ai'
+import {AiFillFacebook} from 'react-icons/ai'
+import {FaTripadvisor} from 'react-icons/fa'
+import {FiChevronRight} from 'react-icons/fi'
 
-const footer = () => {
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
+const Footer = () => {
+//add scroll animation with react hook
+useEffect(()=>{
+  Aos.init({duration: 2000})
+}, [])
+
+
+
   return (
    <section className='footer'>
  <div className="videoDiv">
@@ -12,17 +28,137 @@ const footer = () => {
 
 <div className="secContent container">
   <div className="contactDiv flex">
- <div className="text">
+ <div data-aos="fade-up" className="text">
   <small>KEEP IN TOUCH</small>
   <h2>Travel with us</h2>
  </div>
 
  <div className="inputDiv flex">
-  <input type="text" placeholder='Enter Email Address'/>
-  <button className='btn flex' type='submit'>
+  <input data-aos="fade-up" type="text" placeholder='Enter Email Address'/>
+  <button data-aos="fade-up" className='btn flex' type='submit'>
      SEND<FiSend className="icon"/>
   </button>
  </div>
+  </div>
+
+  <div className="footerCard flex">
+  <div className="footerIntro flex">
+    <div className="logoDiv">
+      <a href="#" className='logo flex'>
+        <MdTravelExplore className="icon"/>
+        Denker Ltd.
+      </a>
+    </div>
+
+     <div data-aos="fade-up"
+     className="footerParagraph">
+     Denker Tours & Safaris is a tour company founded in Kenya by an expert tour guide with vast knowledge and enthusiasm in nature, wildlife, tourism and travels. We have great love for conservation and wildlife photography, we passionately share our African biodiversity in the safaris we offer. We specialize in tailor-made safaris which capture the essence of Romance, adventure and beautiful memories.
+     </div>
+
+     <div data-aos="fade-up"
+     className="footerSocials flex">
+      <AiOutlineTwitter className="icon"/>
+      <AiFillFacebook className="icon"/>
+      <AiFillInstagram className="icon"/>
+      <FaTripadvisor className="icon"/>
+
+     </div>
+  </div>
+ 
+  <div className="footerLinks grid">
+     {/* group one */}
+     <div data-aos="fade-up"
+      data-aos-duration="3000"
+     className="linkGroup">
+      <span className="groupTitle">
+        OUR AGENCY
+      </span>
+
+      <li className="footerList flex">
+      <FiChevronRight className="icon"/>  
+      Services
+      </li>
+
+      <li className="footerList flex">
+      <FiChevronRight className="icon"/>  
+      Payment
+      </li>
+
+      <li className="footerList flex">
+      <FiChevronRight className="icon"/>  
+      Terms & Conditions
+      </li>
+
+      <li className="footerList flex">
+      <FiChevronRight className="icon"/>  
+      Why Choose us
+      </li>
+
+     </div>
+       {/* group two */}
+       <div data-aos="fade-up"
+       data-aos-duration="4000"
+       className="linkGroup">
+      <span className="groupTitle">
+        PARTNERS
+      </span>
+
+      <li className="footerList flex">
+      <FiChevronRight className="icon"/>  
+      Services
+      </li>
+
+      <li className="footerList flex">
+      <FiChevronRight className="icon"/>  
+      Payment
+      </li>
+
+      <li className="footerList flex">
+      <FiChevronRight className="icon"/>  
+      Terms & Conditions
+      </li>
+
+      <li className="footerList flex">
+      <FiChevronRight className="icon"/>  
+      Why Choose us
+      </li>
+
+     </div>
+       {/* group three */}
+       <div data-aos="fade-up"
+        data-aos-duration="5000"
+       className="linkGroup">
+      <span className="groupTitle">
+       ABOUT
+      </span>
+
+      <li className="footerList flex">
+      <FiChevronRight className="icon"/>  
+      Services
+      </li>
+
+      <li className="footerList flex">
+      <FiChevronRight className="icon"/>  
+      Payment
+      </li>
+
+      <li className="footerList flex">
+      <FiChevronRight className="icon"/>  
+      Terms & Conditions
+      </li>
+
+      <li className="footerList flex">
+      <FiChevronRight className="icon"/>  
+      Why Choose us
+      </li>
+
+     </div>
+  </div>
+
+
+<div className="footerDiv flex">
+  <small>@2023 Denker Tours and Safaris | Website managed by Cynthia Gathura </small>
+</div>
   </div>
 </div>
 
@@ -30,4 +166,4 @@ const footer = () => {
   )
 }
 
-export default footer
+export default Footer

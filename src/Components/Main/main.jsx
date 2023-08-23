@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './main.scss'
 import {HiOutlineLocationMarker} from 'react-icons/hi'
 import {BsBagHeart} from 'react-icons/bs'
@@ -11,6 +11,9 @@ import img34 from '../../Denkerreact/img34.jpg'
 import img6 from '../../Denkerreact/img6.JPG'
 import img17 from '../../Denkerreact/img17.JPG'
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 //pasting data array
 const Data = [
 {
@@ -20,7 +23,7 @@ destTitle: 'Lake Nakuru-Maasai Mara',
 location: 'Nakuru',
 grade: 'WILDLIFE EXPERIENCE',
 days: '4days',
-description: 'Explore two of the top game parks in Kenya - Masai Mara(A large game reserve in south western Kenya famous for its exceptional population of lions, leopards, cheetahs and its annual migration of zebra and wildebeest) and Lake Nakuru National Park(Famous for the big five and birds’ sanctuary it hosts an abundance of birds and varied wildlife) on thrilling game viewing drives over 4 adventure-filled days.',
+description: 'Explore two of the top game parks in Kenya - Masai Mara(A large game reserve in south western Kenya famous for its exceptional population of lions, leopards, cheetahs and its annual migration of zebra and wildebeest) and Lake Nakuru National Park(Famous for the big five and birds’ sanctuary, it hosts an abundance of birds and varied wildlife) on thrilling game viewing drives over 4 adventure-filled days.',
 },
 
 {
@@ -76,11 +79,17 @@ description: 'Explore two of the top game parks in Kenya - Masai Mara(A large ga
 ]
 
 const Main = () => {
+//add scroll animation with react hook
+useEffect(()=>{
+  Aos.init({duration: 2000})
+}, [])
+
+
   return (
     <section className='main container section'>
 
      <div className="secTitle">
-      <h3 className="title">
+      <h3  data-aos="fade-right"className="title">
         Popular Destinations
       </h3>
      </div>
@@ -92,7 +101,9 @@ const Main = () => {
      {
        Data.map(({id, imgSrc, destTitle, location, grade, days, description}) =>{
       return(
-        <div key={id} className="singleDestination">
+        <div key={id} 
+        data-aos="fade-up"
+        className="singleDestination">
           {/* return single i from map array */}
 
              <div className="imageDiv">

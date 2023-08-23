@@ -29,7 +29,7 @@ const Navbar = () => {
      </div>
 
 <div className={active}>
-  <ul className="navLists flex">
+  <ul onClick={removeNavbar} className="navLists flex">
 
     <li className="navItem">
       <a href="#" className="navLink">Home</a>
@@ -44,7 +44,7 @@ const Navbar = () => {
     </li>
 
     <li className="navItem">
-      <a href="#" className="navLink">About</a>
+      <a href="#" className="navLink">About Us</a>
     </li>
 
     <li className="navItem">

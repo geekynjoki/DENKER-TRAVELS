@@ -97,10 +97,119 @@
                 width: 100%;
                 justify-content: center;
                 color: var(--whiteColor);
-                
+                font-weight: 500;
+                gap: .5rem;
+
+                .icon{
+                    font-size: 15px;
+                }
             }
         }
 
+        }
+
+        .footerCard{
+            position: relative;
+            padding: 1rem 1rem 4rem;
+            gap: 2rem;
+            border-radius: 1rem;
+            background: var(--bodyColor);
+            width: 100%;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-start;
+            overflow: hidden;
+
+            .footerIntro{
+                flex-basis: 50%;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+                row-gap: .5rem;
+            }
+
+            .logoDiv{
+             .logo{
+                color: var(--blackColor);
+                font-weight: 600;
+
+                .icon{
+                    font-size: 25px;
+                    color: var(--PrimaryColor);
+                    margin-right: 10px;
+                }
+             }   
+            }
+
+            .footerParagraph{
+                font-size: 13px;
+                color: var(--textColor);
+            }
+
+            .footerSocials{
+               column-gap: .5rem;
+
+
+            .icon{
+                color: var(--blackColor);
+                font-size: 20px;
+
+                &:hover{
+                    color: var(--PrimaryColor);
+                }
+            }
+            }
+
+            .footerLinks{
+                flex-basis: 50%;
+                width: 100%;
+                gap: 1rem;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: space-between;
+
+                .linkGroup{
+                    .groupTitle{
+                        display: block;
+                        font-weight: 600;
+                        color: var(--blackColor);
+                        margin-bottom: .5rem;     
+                    }
+
+                    .footerList{
+                        font-size: 15px;
+                        color: var(--textColor);
+                        transition: .3s ease-in-out;
+
+                        .icon{
+                           font-size: 15px; 
+                           color: var(--greyText);
+                        }
+
+                        &:hover{
+                            color: var(--PrimaryColor);
+                            transform: translateX(7px);
+
+                            .icon{
+                                color: var(--SecondaryColor);
+                            }
+                        }
+                    }
+                }
+            }
+           
+            .footerDiv{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: var(--SecondaryColor);
+                padding: .5rem 2rem;
+
+                small{
+                    font-size: 16px;
+                    color: var(--whiteColor);
+                }
+            }
         }
     }
 }
