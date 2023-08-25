@@ -63,14 +63,14 @@
 
             .text{
                 small{
-                    font-size: 13px;
+                    font-size: 15px;
                     font-weight: 700;
                     color: rgb(49, 12, 12);
                 }
 
                h2{
                 color: rgb(49, 12, 12);
-                font-size: 1.8rem;
+                font-size: 0.9rem;
                }
             }
 
@@ -211,5 +211,95 @@
                 }
             }
         }
+    }
+}
+
+//MEDIA QUERIES*********>
+
+@media screen and (min-width: 500px) {
+    .footer{
+        .secContent{
+            .footerCard{
+                .footerLinks{
+                    grid-template-columns: repeat(3,1fr);
+                   padding-bottom: 1rem;
+                }
+
+               .footerDiv{
+                justify-content: space-between;
+                flex-direction: row;
+
+                small{
+                    font-size: 14px;
+                    color: var(--whiteColor);
+                }
+               } 
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 600px) {
+    .footer{
+        .secContent{
+           .contactDiv{
+            flex-direction: row;
+            justify-content: space-between;
+
+
+            .inputDiv{
+                width: max-content;
+                flex-direction: row;
+                justify-content: flex-start;
+
+
+                input{
+                    width: 60%;
+                }
+
+                .btn{
+                    width: max-content;
+                }
+            }
+           }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .footer{
+       .secContent{
+        .footerCard{
+            padding: 3rem 1rem;
+
+            .footerIntro{
+                .footerParagraph{
+                    font-size: 15px;
+                    color: var(--textColor);
+                }
+
+                .footerSocials{
+                    column-gap: .5rem;
+                    .icon{
+                      color: black;
+                      font-size: 25px;  
+                      &:hover{
+                        color: var(--PrimaryColor);
+                      }
+                    }
+                }
+            }
+
+            .footerLinks{
+                .linkGroup{
+                    .footerList{
+                        font-size: 16px;
+                        padding: 5px 0;
+                    }
+                }
+            }
+        }
+       }
     }
 }

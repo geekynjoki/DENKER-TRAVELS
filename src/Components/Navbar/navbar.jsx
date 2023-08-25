@@ -32,31 +32,31 @@ const Navbar = () => {
   <ul onClick={removeNavbar} className="navLists flex">
 
     <li className="navItem">
-      <a href="#" className="navLink">Home</a>
+      <a href="/" className="navLink">Home</a>
     </li>
 
     <li className="navItem">
-      <a href="#" className="navLink">Packages</a>
+      <a href="/Packages" className="navLink">Packages</a>
     </li>
 
     <li className="navItem">
-      <a href="#" className="navLink">Gallery</a>
+      <a href="/Gallery" className="navLink">Gallery</a>
     </li>
 
     <li className="navItem">
-      <a href="#" className="navLink">About Us</a>
+      <a href="/about" className="navLink">About</a>
     </li>
 
     <li className="navItem">
-      <a href="#" className="navLink">Vehicles</a>
+      <a href="/Vehicles" className="navLink">Vehicles</a>
     </li>
 
     <li className="navItem">
-      <a href="#" className="navLink">Contact</a>
+      <a href="/Contact" className="navLink">Contact</a>
     </li>
 
   <button className='btn'>
-   <a href='#'>BOOK NOW</a>
+   <a href='/Enquiries'>ENQUIRIES</a>
   </button>
   </ul>
 

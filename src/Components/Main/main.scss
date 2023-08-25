@@ -20,7 +20,7 @@
         .title{
             position: relative;
             width: max-content;
-            color: var(--textColor);
+            color:var(--blackColor);
             margin: 1rem 0;
             z-index: 2;
 
@@ -109,25 +109,10 @@
               .grade{
                 color: var(--textColor);
                 max-width: 100px;
-                line-height: 20px;
+                line-height: 12px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-
-
-                small{
-                    text-align: center;
-                    background: var(--gradientColor);
-                    border-radius: 1rem;
-                    color: var(--whiteColor);
-                    padding: 1px 10px;
-                    font-size: 10px;
-                }
-              }
-
-              .price{
-                font-size: 2rem;
-                color: var(--blackColor);
 
               }
 
@@ -135,7 +120,7 @@
 
              .desc{
                 font-size: 13.5px;
-                color: var(--textColor);
+                color: rgb(37, 37, 16);
                  font-weight: 500;
             }
 
@@ -159,4 +144,34 @@
 
     }
 
+}
+
+//MEDIA QUERIES**************>
+
+@media screen and (min-width: 500px) {
+    .title{
+        font-size: 1.5rem;
+        &::after{
+            width: 155px !important;
+        }
+    }
+
+    .secContent{
+        grid-template-columns: repeat(2,1fr);
+
+        .singleDestination{
+            height: auto;
+        }
+    }
+}
+
+
+@media screen and (min-width: 840px) {
+    .secContent{
+        grid-template-columns: repeat(3,1fr);
+
+        .singleDestination{
+            height: auto;
+        }
+    }
 }

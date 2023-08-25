@@ -1,0 +1,61 @@
+.homeFooterIcons{
+        width: 100%;
+        justify-content: space-between;
+
+        .icon{
+            font-size: 20px;
+            margin: 0 1px;
+            color: var(--whiteColor);
+            font-weight: 600;
+            &:hover{
+                color: var(--PrimaryColor);
+            }
+        }
+     }
+
+     <div data-aos="fade-up"
+     className="homeFooterIcons flex">
+      <div className="rightIcons">
+      <FiFacebook className="icon"/>
+      <AiOutlineInstagram className="icon"/>
+      <SiTripadvisor className="icon"/>
+      </div>
+  
+      <div className="leftIcons">
+      <BsListTask className="icon"/>
+      <TbApps className="icon"/>
+        </div>
+     </div>
+
+
+     <div data-aos="fade-up" className="cardDiv grid">
+
+     <div className="destinationInput">
+         <label htmlFor="city">Search for Destination:</label>
+         <div className="input flex">
+           <input type="text" placeholder='Enter Destination...' />
+           <GoLocation className="icon"/>
+         </div>
+        </div>
+   
+        <div className="dateInput">
+         <label htmlFor="date">Select Date:</label>
+         <div className="input flex">
+           <input type="date" placeholder='Enter Date...' />
+         </div>
+        </div>
+   
+        <div className="daysInput">
+        <div className="label_total flex">
+         <label htmlFor="days">Maximum Number of Days:</label>
+        <h3 className="total">20days</h3>
+        </div>
+   
+        <div className="input flex">
+          <input type="range" max="20" min="1"/>
+        </div>
+   
+        </div>
+    
+   
+     </div>

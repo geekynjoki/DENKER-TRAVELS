@@ -26,7 +26,7 @@ useEffect(()=>{
   <div className="textDiv">
     <span data-aos="fade-up"
     className="smallText">
-      Classic Packages
+      Popular Destinations
     </span>
     <h1 data-aos="fade-up"
     className="homeTitle">
@@ -62,24 +62,10 @@ useEffect(()=>{
      </div>
 
      </div>
-
-    
+ 
 
   </div>
 
-   <div data-aos="fade-up"
-   className="homeFooterIcons flex">
-    <div className="rightIcons">
-    <FiFacebook className="icon"/>
-    <AiOutlineInstagram className="icon"/>
-    <SiTripadvisor className="icon"/>
-    </div>
-
-    <div className="leftIcons">
-    <BsListTask className="icon"/>
-    <TbApps className="icon"/>
-      </div>
-   </div>
 
 </div>
 
