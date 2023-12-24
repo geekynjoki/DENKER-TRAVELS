@@ -34,38 +34,10 @@ useEffect(()=>{
     </h1>
   </div>
 
-  <div data-aos="fade-up" className="cardDiv grid">
+  <div data-aos="fade-up" className='homeParagraph' >
+  <h2>Our Safaris include;</h2> <br /> -Customized safari tours <br /> -Solo Travelers safaris <br /> -Couples Safaris & Honeymoon Safaris <br /> -Family & Kids Safari <br /> -Group Safaris 
 
-  <div className="destinationInput">
-      <label htmlFor="city">Search for Destination:</label>
-      <div className="input flex">
-        <input type="text" placeholder='Enter Destination...' />
-        <GoLocation className="icon"/>
-      </div>
-     </div>
-
-     <div className="dateInput">
-      <label htmlFor="date">Select Date:</label>
-      <div className="input flex">
-        <input type="date" placeholder='Enter Date...' />
-      </div>
-     </div>
-
-     <div className="daysInput">
-     <div className="label_total flex">
-      <label htmlFor="days">Maximum Number of Days:</label>
-     <h3 className="total">20days</h3>
-     </div>
-
-     <div className="input flex">
-       <input type="range" max="20" min="1"/>
-     </div>
-
-     </div>
- 
-
-  </div>
-
+    </div>
 
 </div>
 

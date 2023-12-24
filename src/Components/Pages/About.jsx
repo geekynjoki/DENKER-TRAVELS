@@ -1,8 +1,23 @@
 import React from 'react'
 
-export const About = () => {
+const About = () => {
   return (
-    <div>youhhtf</div>
+    <>
+    <div>Packages</div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <h1>Another package</h1>
+    </>
   )
 }
+
+export default About
 

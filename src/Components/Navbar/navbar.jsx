@@ -4,7 +4,7 @@ import './navbar.scss'
 import {MdTravelExplore} from 'react-icons/md'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import {TbGridDots} from 'react-icons/tb'
-
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
  const [active, setActive] = useState('navBar')
@@ -32,11 +32,11 @@ const Navbar = () => {
   <ul onClick={removeNavbar} className="navLists flex">
 
     <li className="navItem">
-      <a href="/" className="navLink">Home</a>
+      <Link to="/" className="navLink">Home</Link>
     </li>
 
     <li className="navItem">
-      <a href="/Packages" className="navLink">Packages</a>
+      <Link to="/Packages" className="navLink">Packages</Link>
     </li>
 
     <li className="navItem">

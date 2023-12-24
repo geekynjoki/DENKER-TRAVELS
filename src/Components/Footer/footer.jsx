@@ -36,12 +36,7 @@ useEffect(()=>{
   </h2>
  </div>
 
- <div className="inputDiv flex">
-  <input data-aos="fade-up" type="text" placeholder='Enter Email Address'/>
-  <button data-aos="fade-up" className='btn flex' type='submit'>
-     SEND<FiSend className="icon"/>
-  </button>
- </div>
+
   </div>
 
   <div className="footerCard flex">
@@ -77,7 +72,7 @@ useEffect(()=>{
       </a>
      </div>
   </div>
- 
+
   <div className="footerLinks grid">
      {/* group one */}
      <div data-aos="fade-up"
@@ -108,65 +103,7 @@ useEffect(()=>{
       </li>
 
      </div>
-       {/* group two */}
-       <div data-aos="fade-up"
-       data-aos-duration="4000"
-       className="linkGroup">
-      <span className="groupTitle">
-        PARTNERS
-      </span>
-
-      <li className="footerList flex">
-      <FiChevronRight className="icon"/>  
-      Services
-      </li>
-
-      <li className="footerList flex">
-      <FiChevronRight className="icon"/>  
-      Payment
-      </li>
-
-      <li className="footerList flex">
-      <FiChevronRight className="icon"/>  
-      Terms & Conditions
-      </li>
-
-      <li className="footerList flex">
-      <FiChevronRight className="icon"/>  
-      Why Choose us
-      </li>
-
      </div>
-       {/* group three */}
-       <div data-aos="fade-up"
-        data-aos-duration="5000"
-       className="linkGroup">
-      <span className="groupTitle">
-       ABOUT
-      </span>
-
-      <li className="footerList flex">
-      <FiChevronRight className="icon"/>  
-      Services
-      </li>
-
-      <li className="footerList flex">
-      <FiChevronRight className="icon"/>  
-      Payment
-      </li>
-
-      <li className="footerList flex">
-      <FiChevronRight className="icon"/>  
-      Terms & Conditions
-      </li>
-
-      <li className="footerList flex">
-      <FiChevronRight className="icon"/>  
-      Why Choose us
-      </li>
-
-     </div>
-  </div>
 
 
 <div className="footerDiv flex">
