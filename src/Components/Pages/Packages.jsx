@@ -1,6 +1,7 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {HiOutlineLocationMarker} from 'react-icons/hi'
 import {BsBagHeart} from 'react-icons/bs'
+import { AiFillCloseCircle } from "react-icons/ai";
 
 
 //importing images
@@ -15,7 +16,7 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 
 //pasting data array
-const Content = [
+const Data = [
 {
 id:1,
 imgSrc: img27,
@@ -23,6 +24,67 @@ destTitle: '4days Masai Mara-Lake Nakuru',
 location: 'Nakuru',
 grade: 'WILDLIFE SAFARI',
 description: 'Explore two of the top game parks in Kenya - Masai Mara(A large game reserve in south western Kenya famous for its exceptional population of lions, leopards, cheetahs and its annual migration of zebra and wildebeest) and Lake Nakuru National Park(Famous for the big five and birds’ sanctuary, it hosts an abundance of birds and varied wildlife) on thrilling game viewing drives over 4 adventure-filled days.',
+itinerary: [
+  {
+    day: 'Day 1 – Nairobi to Lake Nakuru',
+    details: [
+      'Your safari starts with pick up at 7:30 AM from your Nairobi hotel or Airport and drive to Nakuru.',
+      'You will stop for views of the Great Rift Valley then proceed to Nakuru.',
+      'Arrive in time for lunch and then relax.',
+      '1600hrs: Start the evening game drive.',
+      'Highlights here are that this is home to hundreds of Rhinos, both, black and white Rhinos, and other wildlife and lots of bird life.',
+      'After the game drive, we head back to lodge/camp freshen up and enjoy a freshly prepared Dinner.',
+    ],
+  },
+  {
+    day: 'Day 2 – Lake Nakuru to Maasai Mara',
+    details: [
+      'After breakfast, you will then drive to Maasai Mara,',
+      'A Maasai Mara safari is an unmissable highlight of any holiday in Kenya. There are breathtaking panoramas in every direction, a vast range of wildlife including the Big Five and a rich cultural heritage to explore. Kenya’s Maasai Mara is without doubt one of the greatest safari destinations in Africa.',
+      'Between July and October things get busy in the Great Rift Valley. Millions of zebra and wildebeest make the perilous crossing across the Maasai Mara in search of new grazing territory. And in their wake comes a veritable horde of predators including lion and leopard.',
+      'Arrive in time for lunch and then have time to relax from the drive.',
+      '1600hrs: depart on an afternoon game drive.',
+      '1830hrs: return to lodge/camp for dinner and overnight stay.',
+    ],
+  },
+  {
+    day: 'Day 3 – Maasai Mara',
+    details: [
+      'Today’s itinerary is flexible and you can discuss with your guide and plan for the day’s schedule.',
+      'You can either have a relaxed breakfast and depart for full day game drives around 7:30 am with picnic lunch. This will give you a chance to visit the Mara River where the migration happens during its time. Also better chances to view wildlife all day and return back to the lodge/camp late afternoon.',
+      'Or: –',
+      '600hrs: Early morning game drive. Later return to your accommodation for breakfast and relax for the morning until mid-afternoon.',
+      '1600hrs: depart on an afternoon game drive.',
+      '1830hrs: return to lodge/camp for dinner and overnight stay.',
+    ],
+  },
+  {
+    day: 'Day 4 – Maasai Mara to Nairobi',
+    details: [
+      'Depending on your flight details you will organize with your guide on your departure from Maasai Mara.',
+      'You will be transferred to your Nairobi Location or to the airport for your home bound flight.',
+    ],
+  },
+],
+stayLocations: ['Lake Nakuru', 'Maasai Mara', 'Maasai Mara', 'Nairobi'],
+inclusions: [
+  'Park Fees (for Non-Residents).',
+  'Daily game drives while on Safari.',
+  'A professional driver/guide.',
+  '4×4 Land Cruisers or Safari Van.',
+  'All Taxes and VAT.',
+  'Meals as per itinerary.',
+  'Drinking water while on safari (2 liters per person per day).',
+],
+exclusions: [
+  'International flights.',
+  'Airport Transfers (Unless mentioned otherwise).',
+  'Additional accommodation before and at the end of the tour (Unless mentioned otherwise).',
+  'Tips.',
+  'Personal Items (Souvenirs, Travel Insurance, Visa Fees, etc.).',
+  'Government imposed increase of Taxes and or Park Fees.',
+  'Any activities not mentioned in the itinerary.',
+],
 },
 
 {
@@ -127,10 +189,28 @@ description: 'This safari features the open plains of the Masai Mara famous for 
 ]
 
 const Packages = () => {
+const [selectedDestination, setSelectedDestination] = useState(null);
 //add scroll animation with react hook
 useEffect(()=>{
   Aos.init({duration: 2000})
 }, [])
+
+
+const openModal = (id) => {
+  const destination = Data.find((item) => item.id === id);
+  setSelectedDestination(destination);
+};
+
+const closeModal = () => {
+  setSelectedDestination(null);
+};
+
+const closeModalOutside = (e) => {
+  if (e.target.classList.contains('modal-overlay')) {
+    closeModal();
+  }
+};
+
 
 
   return (
@@ -139,7 +219,7 @@ useEffect(()=>{
     <section className='main container section'>
  <div className="secTitle">
       <h3  data-aos="fade-right"className="title">
-       Packages Offered By Us
+       Exciting Tour Packages!!
       </h3>
      </div>
 
@@ -148,7 +228,7 @@ useEffect(()=>{
     {/* using high order array grid,create an array with data and from that .map() array to fetch each destination at once*/}
      
      {
-       Content.map(({id, imgSrc, destTitle, location, grade, days, description}) =>{
+       Data.map(({id, imgSrc, destTitle, location, grade, days, description}) =>{
       return(
         <div key={id} 
         data-aos="fade-up"
@@ -180,9 +260,9 @@ useEffect(()=>{
           <p>{description}</p>
         </div>
 
-         <button className='btn flex'>
-          DETAILS <BsBagHeart className="icon"/>
-         </button>
+        <button onClick={() => openModal(id)} className="btn flex">
+                  DETAILS <BsBagHeart className="icon" />
+                </button>
 
          </div>
 
@@ -196,8 +276,79 @@ useEffect(()=>{
 
     </div>
 
+
+    {selectedDestination && (
+      <div className='modal-overlay' onClick={closeModalOutside}>
+        <div className="modal">
+          <div className="modal_content">
+            <span className="close" onClick={closeModal}>
+              <AiFillCloseCircle className="close-icon" />
+            </span>
+            <h2>{selectedDestination.destTitle}</h2>
+           
+
+           {/* Iterate through the itinerary days */}
+  {selectedDestination.itinerary.map((day, index) => (
+    <div key={index} className="itinerary-day">
+      <h3>{day.day}</h3>
+      {/* Use a list for each day's details */}
+      <ul className="itinerary-list">
+        {day.details.map((point, pointIndex) => (
+          // List items with note dots
+          <li key={pointIndex} className="itinerary-point">
+            <span className="note-dot">&#8226;</span> {point}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+
+  {/* Display stay locations, inclusions, and exclusions */}
+  <div className="itinerary-section">
+    <h3>Stay Locations</h3>
+    <ul className="itinerary-list">
+      {selectedDestination.stayLocations.map((location, index) => (
+        <li key={index} className="itinerary-point">
+          <span className="note-dot">&#8226;</span> {location}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div className="itinerary-section">
+    <h3>Inclusions</h3>
+    <ul className="itinerary-list">
+      {selectedDestination.inclusions.map((item, index) => (
+        <li key={index} className="itinerary-point">
+          <span className="note-dot">&#8226;</span> {item}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div className="itinerary-section">
+    <h3>Exclusions</h3>
+    <ul className="itinerary-list">
+      {selectedDestination.exclusions.map((item, index) => (
+        <li key={index} className="itinerary-point">
+          <span className="note-dot">&#8226;</span> {item}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+
+            {/* Add more details as needed */}
+          </div>
+        </div>
+        </div>
+      )}
+
+
+
     </section>
   )
 }
 
-export default Packages
+export {Data};
+export default Packages;

@@ -11,7 +11,7 @@ import Gallery from './Components/Pages/Gallery'
 import Vehicles from './Components/Pages/Vehicles'
 import Contact from './Components/Pages/Contact'
 import Enquiries from './Components/Pages/Enquiries'
-import DestinationDetails from './Components/DestinationDetails'
+
 
 
 
@@ -33,11 +33,8 @@ function App () {
     <Route path='/vehicles' element={<Vehicles/>}></Route>
     <Route path='/contact' element={<Contact/>}></Route>
     <Route path='/enquiries' element={<Enquiries/>}></Route>
-    <Route path="/destination/:id" element={<DestinationDetails />} />
-    <Route path="/destination/:id" element={<DestinationDetails />} />
   </Routes>
  
-
 </Router>
 <Main></Main>
 <Footer></Footer>
