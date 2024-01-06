@@ -1,7 +1,10 @@
-import React, {useEffect} from 'react'
+
+import React, {useEffect, useState} from 'react'
 import './main.scss'
 import {HiOutlineLocationMarker} from 'react-icons/hi'
 import {BsBagHeart} from 'react-icons/bs'
+import { Link } from 'react-router-dom'
+import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 //importing images
 import img27 from '../../Denkerreact/img27.jpg'
@@ -23,7 +26,58 @@ destTitle: '4days Masai Mara-Lake Nakuru',
 location: 'Nakuru',
 grade: 'WILDLIFE SAFARI',
 description: 'Explore two of the top game parks in Kenya - Masai Mara(A large game reserve in south western Kenya famous for its exceptional population of lions, leopards, cheetahs and its annual migration of zebra and wildebeest) and Lake Nakuru National Park(Famous for the big five and birds’ sanctuary, it hosts an abundance of birds and varied wildlife) on thrilling game viewing drives over 4 adventure-filled days.',
+itinerary: [
+  {
+    day: 'Day 1 - Nairobi to Amboseli',
+    details: [
+      'Your safari starts with pick up at 7:30 AM from your Nairobi hotel or Airport and drive to Amboseli.',
+      'Arrive in Amboseli shortly after noon and check into your lodge/camp, have hot lunch and then have some time to rest.',
+      '1600 hrs: - Depart for an afternoon game drive.',
+      'The highlight here is that Amboseli has the greatest concentration of elephants in the world. It is home to over 1600 elephants from 56 different families. Each of the elephants has a name and a photo attached to it’s name.',
+      'After the game drive, we head back to lodge/camp freshen up and enjoy a freshly prepared Dinner.',
+      'Overnight at your lodge/camp.',
+    ],
+  },
+  {
+    day: 'Day 2 - Amboseli',
+    details: [
+      'Today’s itinerary is flexible and you can discuss with your guide and plan for the day’s schedule.',
+      'You can either have a relaxed breakfast and depart for full day game drives around 7:30 am with picnic lunch and return back to the lodge/camp late afternoon.',
+      'Or you can depart at 600hrs on an early morning game drive. Later return to your accommodation for breakfast and relax for the morning until midafternoon.',
+      '1600hrs:- depart on an afternoon game drive.',
+      '1830hrs:- return to lodge/camp for dinner and overnight stay.',
+    ],
+  },
+  {
+    day: 'Day 3 - Amboseli to Nairobi',
+    details: [
+      'Depending on your flight details you will organize with your guide on your departure from Maasai Mara.',
+      'You will be transferred to your Nairobi Location or to the airport for your home bound flight.',
+    ],
+  },
+],
+stayLocations: ['Amboseli', 'Amboseli', 'Nairobi'],
+inclusions: [
+  'Park Fees (for Non-Residents).',
+  'Daily game drives while on Safari.',
+  'A professional driver/guide.',
+  '4×4 Land Cruisers or Safari Van.',
+  'All Taxes and VAT.',
+  'Meals as per itinerary.',
+  'Drinking water while on safari (2 liters per person per day).',
+],
+exclusions: [
+  'International flights.',
+  'Airport Transfers (Unless mentioned otherwise).',
+  'Additional accommodation before and at the end of the tour (Unless mentioned otherwise).',
+  'Tips.',
+  'Personal Items (Souvenirs, Travel Insurance, Visa Fees, etc.).',
+  'Government imposed increase of Taxes and or Park Fees.',
+  'Any activities not mentioned in the itinerary.',
+],
+
 },
+
 
 {
 id:2,
@@ -72,11 +126,24 @@ description: 'This safari features the open plains of the Masai Mara famous for 
 
 ]
 
+
+
 const Main = () => {
+  const [selectedDestination, setSelectedDestination] = useState(null);
 //add scroll animation with react hook
 useEffect(()=>{
   Aos.init({duration: 2000})
 }, [])
+
+
+const openModal = (id) => {
+  const destination = Data.find((item) => item.id === id);
+  setSelectedDestination(destination);
+};
+
+const closeModal = () => {
+  setSelectedDestination(null);
+};
 
 
   return (
@@ -93,7 +160,7 @@ useEffect(()=>{
     {/* using high order array grid,create an array with data and from that .map() array to fetch each destination at once*/}
      
      {
-       Data.map(({id, imgSrc, destTitle, location, grade, days, description}) =>{
+       Data.map(({id, imgSrc, destTitle, location, grade,  description}) =>{
       return(
         <div key={id} 
         data-aos="fade-up"
@@ -125,24 +192,91 @@ useEffect(()=>{
           <p>{description}</p>
         </div>
 
-         <button className='btn flex'>
-          DETAILS <BsBagHeart className="icon"/>
-         </button>
+        <button onClick={() => openModal(id)} className="btn flex">
+                  DETAILS <BsBagHeart className="icon" />
+                </button>
 
          </div>
 
         </div>
 
       )
-
        })
 
      }
 
     </div>
 
+    {selectedDestination && (
+        <div className="modal">
+          <div className="modal_content">
+            <span className="close" onClick={closeModal}>
+              <AiOutlineCloseCircle className="close-icon" />
+            </span>
+            <h2>{selectedDestination.destTitle}</h2>
+           
+
+           {/* Iterate through the itinerary days */}
+  {selectedDestination.itinerary.map((day, index) => (
+    <div key={index} className="itinerary-day">
+      <h3>{day.day}</h3>
+      {/* Use a list for each day's details */}
+      <ul className="itinerary-list">
+        {day.details.map((point, pointIndex) => (
+          // List items with note dots
+          <li key={pointIndex} className="itinerary-point">
+            <span className="note-dot">&#8226;</span> {point}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+
+  {/* Display stay locations, inclusions, and exclusions */}
+  <div className="itinerary-section">
+    <h3>Stay Locations</h3>
+    <ul className="itinerary-list">
+      {selectedDestination.stayLocations.map((location, index) => (
+        <li key={index} className="itinerary-point">
+          <span className="note-dot">&#8226;</span> {location}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div className="itinerary-section">
+    <h3>Inclusions</h3>
+    <ul className="itinerary-list">
+      {selectedDestination.inclusions.map((item, index) => (
+        <li key={index} className="itinerary-point">
+          <span className="note-dot">&#8226;</span> {item}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div className="itinerary-section">
+    <h3>Exclusions</h3>
+    <ul className="itinerary-list">
+      {selectedDestination.exclusions.map((item, index) => (
+        <li key={index} className="itinerary-point">
+          <span className="note-dot">&#8226;</span> {item}
+        </li>
+      ))}
+    </ul>
+  </div>
+  
+
+            {/* Add more details as needed */}
+          </div>
+        </div>
+      )}
+
     </section>
   )
 }
 
-export default Main
+export {Data};
+export default Main;
+
+

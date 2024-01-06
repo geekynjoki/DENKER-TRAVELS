@@ -15,7 +15,7 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 
 //pasting data array
-const Data = [
+const Content = [
 {
 id:1,
 imgSrc: img27,
@@ -137,14 +137,18 @@ useEffect(()=>{
 
   
     <section className='main container section'>
-
+ <div className="secTitle">
+      <h3  data-aos="fade-right"className="title">
+       Packages Offered By Us
+      </h3>
+     </div>
 
     <div className="secContent grid">
 
     {/* using high order array grid,create an array with data and from that .map() array to fetch each destination at once*/}
      
      {
-       Data.map(({id, imgSrc, destTitle, location, grade, days, description}) =>{
+       Content.map(({id, imgSrc, destTitle, location, grade, days, description}) =>{
       return(
         <div key={id} 
         data-aos="fade-up"
