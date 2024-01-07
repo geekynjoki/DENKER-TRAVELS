@@ -151,7 +151,7 @@
        align-items: center;
        width: 650px;
        background: white;
-       top: 39%;
+       top: 45%;
        left: 43%;
        transform: translate(-40%, -40%);
        box-shadow: rgb(75, 74, 74) 0px 5px 15px;
@@ -173,6 +173,11 @@
     .modal .modal_content .close{
          cursor: pointer;
          border: none;
+         font-size: 24px; 
+         padding: 8px;
+         position: absolute;
+         top: 15px;
+         right: 50px;
     }
 
     .modal .modal_content h2{

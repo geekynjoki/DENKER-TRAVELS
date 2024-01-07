@@ -14,6 +14,9 @@
 
 .header {
 position: fixed;
+top: 0;
+left: 0;
+right: 0;
 display: flex;
 align-items: center;
 justify-content: space-between;
@@ -21,6 +24,7 @@ background: rgb(184, 99, 21);
 width: 100%;
 padding: 0.5rem;
 z-index: 1000;
+margin-top: 0px;
 box-shadow: 0 2px 4px rgba(9, 53, 66, 0.904);
 
 .logo{
@@ -49,7 +53,7 @@ box-shadow: 0 2px 4px rgba(9, 53, 66, 0.904);
         left: 50%;
         padding: 1rem;
         transform: translate(-50%);
-        z-index: 2000;
+        z-index: 3000;
         box-shadow: 0 2px 4px rgba(2, 35, 29, 0.904);
         transition: .3s ease-in-out;
 

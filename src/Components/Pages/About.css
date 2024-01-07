@@ -1,0 +1,29 @@
+.about-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 35px;
+    margin-top: 85px;
+    justify-content: center;
+  }
+  
+  .about-container {
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+   color: black;
+   text-transform: uppercase;
+  }
+  
+  p {
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+  

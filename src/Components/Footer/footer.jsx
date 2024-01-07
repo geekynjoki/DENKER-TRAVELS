@@ -29,12 +29,14 @@ useEffect(()=>{
 
 <div className="secContent container">
   <div className="contactDiv flex">
- <div data-aos="fade-up" className="text">
+
+  <div data-aos="fade-up" className="text">
   <small>KEEP IN TOUCH</small>
   <h2>
-    Phone/Whatsapp: +254722953544
+    Phone/Whatsapp: <a href="tel:+254722953544">+254722953544</a>
   </h2>
- </div>
+</div>
+
 
 
   </div>

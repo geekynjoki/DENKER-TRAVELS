@@ -192,9 +192,12 @@ const Main = () => {
   const [selectedDestination, setSelectedDestination] = useState(null);
   // const modalRef = useRef(null);
 //add scroll animation with react hook
-useEffect(()=>{
-  Aos.init({duration: 2000})
-}, [])
+
+
+
+useEffect(() => {
+  Aos.init({ duration: 2000 });
+}, []);
 
 
 const openModal = (id) => {
@@ -202,17 +205,11 @@ const openModal = (id) => {
   setSelectedDestination(destination);
 };
 
+
 const closeModal = () => {
   setSelectedDestination(null);
 };
 
-const closeModalOutside = (e) => {
-  const modal = document.querySelector('.modal');
-
-  if (modal && !modal.contains(e.target)) {
-    closeModal();
-  }
-};
 
 
 
@@ -262,9 +259,11 @@ const closeModalOutside = (e) => {
           <p>{description}</p>
         </div>
 
-        <button onClick={() => openModal(id)} className="btn flex">
-                  DETAILS <BsBagHeart className="icon" />
-                </button>
+  <button onClick={(e) => openModal(id)} className="btn flex">
+  DETAILS <BsBagHeart className="icon" />
+</button>
+
+
 
          </div>
 
@@ -278,7 +277,7 @@ const closeModalOutside = (e) => {
     </div>
 
     {selectedDestination && (
-      <div className='modal-overlay' onClick={closeModalOutside}>
+      <div className='modal-overlay'>
         <div className="modal">
           <div className="modal_content">
             <span className="close" onClick={closeModal}>

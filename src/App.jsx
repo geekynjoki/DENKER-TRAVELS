@@ -11,7 +11,7 @@ import Gallery from './Components/Pages/Gallery'
 import Vehicles from './Components/Pages/Vehicles'
 import Contact from './Components/Pages/Contact'
 import Enquiries from './Components/Pages/Enquiries'
-
+import WhatsAppButton from './Components/WhatsAppButton';
 
 
 
@@ -20,6 +20,7 @@ import Enquiries from './Components/Pages/Enquiries'
 
 
 function App () {
+ 
 
   return (
     <>
@@ -38,7 +39,7 @@ function App () {
 </Router>
 <Main></Main>
 <Footer></Footer>
-
+<WhatsAppButton phoneNumber="1234567890" />
 </>
   )
   }
