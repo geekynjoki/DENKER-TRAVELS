@@ -121,6 +121,58 @@ destTitle: '3days Meru National Park Safari',
 location: 'Meru',
 grade: 'BIG 5',
 description: 'A commonly accepted area as the setting where Elsa the Joy Adamson lioness, was returned to the wild. Meru provides an astonishing combination of incomparable habitats. Dense riverine forests attract Leopards and a full complement of (the big five)including Black Rhino, in a dramatic setting adorned with doum palms.The park is famous for its birdlife with forest and riverine as well as the arid species. Regular sightings include elephant, white rhino, Gerenuk, eland, reticulated Beisa, Oryx, Grevys Zebra, grants gazelle, Giraffe, and their predators; lion, leopard, cheetah and the hyena.',
+itinerary: [
+    {
+      day: "Day 01: Nairobi - Meru National Park",
+      details: [
+        "Pick up on arrival from the airport or your hotel at 07:00 am.",
+        "Drive to Meru National Park with lunch en route.",
+        "Afternoon game drive.",
+        "Major attractions: Former home of Joy and George Adamson, Elsa the lioness, Views of Mt Kenya, Rivers, Riverine habitats, Tana river, Adamson's falls.",
+        "Dinner and overnight at the campsite.",
+      ],
+    },
+  {
+    day: "Day 02: Meru National Park",
+    details: [
+      "Morning and afternoon game drives.",
+      "Main wildlife: Grevy Zebra, African Elephants, Eland, Bush Pig, Common Waterbuck, Cheetah, Leopard, Reticulated Giraffe, Hippopotamus, Bohor Reedbuck, Hartebeest, Python, Puff Udder, Cobra, Buffalo.",
+      "Over 300 recorded species of birds.",
+      "Main vegetation: Mainly thorny bushland in the North, wooded grasslands in the West, and open grassland elsewhere.",
+      "Dense riverine forests of Doum and Raffia palm.",
+      "All meals and overnight at the campsite.",
+    ],
+  },
+  {
+    day: "Day 03: Meru National Park - Nairobi",
+    details: [
+      "Morning game drive before breakfast.",
+      "Game drive en route back to Nairobi after breakfast.",
+      "Drop-off at your hotel or the airport on arrival.",
+    ],
+  },
+  
+],
+stayLocations: ['Meru'],
+inclusions: [
+  "Complementary airport transfer on arrival in Nairobi",
+    "Transport while on safari - with pop-up roof safari vehicle",
+    "All park entrance fees and government levies",
+    "Full board accommodation in camp or lodges",
+    "3 Meals per day while on safari- vegetarian & non-vegetarian",
+    "English speaking professional driver guides",
+    "Bottled drinking water - 1 litre per person per day",
+],
+exclusions: [
+    "Expenses of personal nature",
+    "Sodas and alcoholic drinks",
+    "Laundry services",
+    "Gratuities/tips",
+    "Optional travel insurance",
+    "Entry visa",
+    "Health requirements (you are entering a Malaria area)",
+    "Accommodation in Nairobi (can be arranged on request)",
+],
 },
 
 {

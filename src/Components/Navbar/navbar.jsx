@@ -25,7 +25,7 @@ const Navbar = () => {
     <div className='logoDiv'>
           {/* Use Link component instead of <a> tag */}
           <Link to="/" className='logo flex'>
-            <h1><MdTravelExplore className='icon' />Denker Tours & Safaris</h1>
+            <h1><MdTravelExplore className='icon' />Kency Safaris</h1>
           </Link>
         </div>
     

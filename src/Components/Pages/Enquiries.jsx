@@ -26,7 +26,7 @@ const Enquiries = () => {
       return;
     }
 
-    emailjs.sendForm('service_nuhvy5m', 'template_nva2stv', form.current, 'LbeO7J62l2Rh_0c5S')
+    emailjs.sendForm('service_5q1y6d2', 'template_ef2oly9', form.current, 'gyC4ysOb3qX8cDAod')
       .then(
         (result) => {
           console.log(result.text);

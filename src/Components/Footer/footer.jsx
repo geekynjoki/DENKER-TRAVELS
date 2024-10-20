@@ -46,27 +46,32 @@ useEffect(()=>{
     <div className="logoDiv">
       <a href="#" className='logo flex'>
         <MdTravelExplore className="icon"/>
-        Denker Ltd.
+        Kency Safaris Ltd.
       </a>
     </div>
 
      <div data-aos="fade-up"
      className="footerParagraph">
-     Denker Tours & Safaris is a tour company founded in Kenya by an expert tour guide with vast knowledge and enthusiasm in nature, wildlife, tourism and travels. We have great love for conservation and wildlife photography, we passionately share our African biodiversity in the safaris we offer. We specialize in tailor-made safaris which capture the essence of Romance, adventure and beautiful memories.
+     Kency Safaris is a tour company founded in Kenya by an expert tour guide with vast knowledge and enthusiasm in nature, wildlife, tourism and travels. We have great love for conservation and wildlife photography, we passionately share our African biodiversity in the safaris we offer. We specialize in tailor-made safaris which capture the essence of Romance, adventure and beautiful memories.
      </div>
 
      <div data-aos="fade-up"
      className="footerSocials flex">
-      <a href='https://twitter.com'>
+      <a href='https://twitter.com/Kency_Tours'
+        target="_blank">
       <AiOutlineTwitter className="icon"/>
       </a>
-      <a href='https://www.facebook.com'>
+      <a href='https://www.facebook.com'
+        target="_blank">
       <AiFillFacebook className="icon"/>
       </a>
-      <a href='https://www.instagram.com'>
+      <a href='https://www.instagram.com'
+        target="_blank">
       <AiFillInstagram className="icon"/>
       </a>
-      <a href='https://mail.google.com/mail/u/0/#inbox'>
+      <a href='mailto:infokencysafaris@gmail.com'
+           target="_blank"
+           >
       <MdEmail className="icon"/>
       </a>
       <a href='https://www.tripadvisor.com'>
@@ -85,31 +90,31 @@ useEffect(()=>{
       </span>
 
       <li className="footerList flex">
-      <FiChevronRight className="icon"/>  
-      Services
-      </li>
+            <FiChevronRight className="icon" />
+            <a href="#payment">Payment</a>
+          </li>
 
       <li className="footerList flex">
-      <FiChevronRight className="icon"/>  
-      Payment
-      </li>
+            <FiChevronRight className="icon" />
+            <a href="#land-cruiser">Popular 4x4 Land Cruiser Safaris</a>
+          </li>
 
-      <li className="footerList flex">
-      <FiChevronRight className="icon"/>  
-      Terms & Conditions
-      </li>
+          <li className="footerList flex">
+            <FiChevronRight className="icon" />
+            <a href="#terms">Booking Terms & Conditions</a>
+          </li>
 
-      <li className="footerList flex">
-      <FiChevronRight className="icon"/>  
-      Why Choose us
-      </li>
+          <li className="footerList flex">
+            <FiChevronRight className="icon" />
+            <a href="#why-choose-us">Why Choose Us</a>
+          </li>
 
      </div>
      </div>
 
 
 <div className="footerDiv flex">
-  <small>@2023 Denker Tours and Safaris | Website managed by Cynthia Gathura </small>
+  <small>@2023 Kency Tours and Safaris | Website managed by Cynthia Gathura </small>
 </div>
   </div>
 </div>
